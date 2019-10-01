@@ -1,7 +1,7 @@
 (function(exports){
 
-  function NoteList(noteText) {
-    this._list = [noteText]
+  function NoteList() {
+    this._list = []
   }
   NoteList.prototype.displayNotes = function() {
     return this._list
