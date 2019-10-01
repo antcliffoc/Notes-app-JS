@@ -1,12 +1,20 @@
 var assert = {
   isTrue: function(assertionToCheck, testName) {
     if (!assertionToCheck) {
-      var error_text = ("Assertion failed: " + assertionToCheck + " is not truthy");
-      document.getElementById('test_errors').insertAdjacentHTML('beforeend', `We expected ${assertionToCheck} - Failed ${error_text} <br /> <br />`)
+      var errorText = ("Assertion failed: " + assertionToCheck + " is not truthy");
+      document.getElementById('testErrors').insertAdjacentHTML('beforeend', `We expected ${assertionToCheck} - Failed ${errorText} <br /> <br />`)
 
     }else {
-      document.getElementById('test_errors').insertAdjacentHTML('beforeend', ` ${testName}  - Passed  <br /> <br />`)
+      document.getElementById('testErrors').insertAdjacentHTML('beforeend', 'Passed <br /> <br/>')
 
     }
   }
 };
+
+ function describe(description){
+   document.getElementById('description').insertAdjacentHTML('beforeend', `${description}`)
+ };
+
+ function it(description){
+   document.getElementById('itText').insertAdjacentHTML('beforeend', `${description}`)
+ }
