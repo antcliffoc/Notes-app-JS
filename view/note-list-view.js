@@ -1,12 +1,15 @@
 (function(exports) {
   function ListNoteView(list){
-
+    this.notelist = list
   }
-  ListNoteView.prototype.htmlOutput = function(list){
-    console.log(list)
+  ListNoteView.prototype.htmlOutput = function(){
+    console.log(this.notelist)
+    var htmlString = "<ul>"
+    this.notelist.displayNotes().forEach(function(note){
+      htmlString += `<li>${note.text()}</li>`
+    })
+    return htmlString += "</ul>"
 
-    return "<ul><li><div>Empty List</div></li></ul>"
-  
 
   };
   exports.ListNoteView = ListNoteView;

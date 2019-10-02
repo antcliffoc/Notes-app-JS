@@ -1,14 +1,25 @@
 var assert = {
-  isTrue: function(assertionToCheck, testName) {
-    if (!assertionToCheck) {
-      var errorText = ("Assertion failed: " + assertionToCheck + " is not truthy");
-      document.getElementById('description').insertAdjacentHTML('beforeend', `We expected ${assertionToCheck} - Failed ${errorText} <br /> <br />`)
-
-    }else {
-      document.getElementById('description').insertAdjacentHTML('beforeend', 'Passed <br /> <br/>')
-
+  isTrue: function(testObject, expectation) {
+    if (testObject !== expectation) {
+      var errorText = ("Assertion failed: " + testObject + " is not equal to " + expectation);
+      document.getElementById('description').insertAdjacentHTML('beforeend', ` We expected ${testObject} to equal ${expectation} - Failed ${errorText} <br /> <br />`)
+      throw new Error(errorText);
+    } else {
+      document.getElementById('description').insertAdjacentHTML('beforeend', ' Passed <br /> <br/>')
     }
-  }
+  },
+
+  contains: function(testObject, expectation) {
+    if (!testObject.includes(expectation)) {
+      var errorText = ("Assertion failed: " + testObject + " includes " + expectation);
+      document.getElementById('description').insertAdjacentHTML('beforeend', ` We expected ${testObject} to include ${expectation} - Failed ${errorText} <br /> <br />`)
+      throw new Error(errorText);
+    } else {
+      document.getElementById('description').insertAdjacentHTML('beforeend', ' Passed <br /> <br/>')
+    }
+  },
+
+
 };
 
  function describe(description){
@@ -16,5 +27,5 @@ var assert = {
  };
 
  function it(description){
-   document.getElementById('description').insertAdjacentHTML('beforeend', `${description}`)
+   document.getElementById('description').insertAdjacentHTML('beforeend', `____${description}`)
  }
