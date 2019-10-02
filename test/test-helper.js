@@ -9,6 +9,16 @@ var assert = {
     }
   },
 
+  notTrue: function(testObject, expectation) {
+    if (testObject === expectation) {
+      var errorText = ("Assertion failed: " + testObject + " is equal to " + expectation);
+      document.getElementById('description').insertAdjacentHTML('beforeend', ` We expected ${testObject} not to equal ${expectation} - Failed ${errorText} <br /> <br />`)
+      throw new Error(errorText);
+    } else {
+      document.getElementById('description').insertAdjacentHTML('beforeend', ' Passed <br /> <br/>')
+    }
+  },
+
   contains: function(testObject, expectation) {
     if (!testObject.includes(expectation)) {
       var errorText = ("Assertion failed: " + testObject + " includes " + expectation);

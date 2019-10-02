@@ -13,5 +13,5 @@
 
   it('sets innerHTML of the app element on the page');
   controller.renderNotes();
-  assert.isTrue(document.getElementById('app').innerHTML, `<ul><li>${noteText}</li></ul>`)
+  assert.isTrue(document.getElementById('app').innerHTML, `<ul><li><a href="#notes/${list.displayNotes()[0].id}">${noteText}</a></li></ul>`)
 })();
