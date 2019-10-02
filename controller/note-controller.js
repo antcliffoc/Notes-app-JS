@@ -17,5 +17,5 @@
 })(this);
 
 controller = new NoteController(new NoteList());
-controller.addNote('first note 654682401341304');
+controller.addNote('first note 123456789101112');
 controller.renderNotes();
