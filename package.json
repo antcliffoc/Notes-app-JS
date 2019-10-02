@@ -1,0 +1,26 @@
+{
+  "name": "notes_app",
+  "version": "1.0.0",
+  "description": "single page js app",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "http-server": "^0.11.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mariacuffaro/js-notes-app.git"
+  },
+  "author": "Maria Cuffaro, Ollie Antliff",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mariacuffaro/js-notes-app/issues"
+  },
+  "homepage": "https://github.com/mariacuffaro/js-notes-app#readme"
+}
