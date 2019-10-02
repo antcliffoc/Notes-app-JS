@@ -19,6 +19,15 @@ var assert = {
     }
   },
 
+  isInstanceOf: function(testObject, expectation) {
+    if (testObject.constructor !== expectation) {
+      var errorText = ("Assertion failed: " + testObject + " is not an instance " + expectation);
+      document.getElementById('description').insertAdjacentHTML('beforeend', ` We expected ${testObject} to be an instance of ${expectation} - Failed ${errorText} <br /> <br />`)
+      throw new Error(errorText);
+    } else {
+      document.getElementById('description').insertAdjacentHTML('beforeend', ' Passed <br /> <br/>')
+    }
+  },
 
 };
 
