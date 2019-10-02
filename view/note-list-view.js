@@ -6,7 +6,7 @@
     console.log(this.notelist)
     var htmlString = "<ul>"
     this.notelist.displayNotes().forEach(function(note){
-      htmlString += `<li><a href=#notes/${note.id}>${note.text()}</a></li>`
+      htmlString += `<li><a href=#notes/${note.id}>${note.text().substring(0,20)}</a></li>`
     })
     return htmlString += "</ul>"
 
