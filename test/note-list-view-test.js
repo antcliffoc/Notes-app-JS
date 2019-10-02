@@ -20,5 +20,5 @@
   let note2 = new Note(text2);
   list.addNote(note2)
 
-  assert.isTrue(view.htmlOutput(), `<ul><li>${text.substring(0,20)}</li><li>${text2.substring(0,20)}</li></ul>`)
+  assert.isTrue(view.htmlOutput(), `<ul><li><a href=#notes/${note.id}>${text.substring(0,20)}</a></li><li><a href=#notes/${note2.id}>${text2.substring(0,20)}</a></li></ul>`)
 })();

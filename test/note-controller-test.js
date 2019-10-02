@@ -14,4 +14,10 @@
   it('sets innerHTML of the app element on the page');
   controller.renderNotes();
   assert.isTrue(document.getElementById('app').innerHTML, `<ul><li><a href="#notes/${list.displayNotes()[0].id}">${noteText.substring(0,20)}</a></li></ul>`)
+
+  it('renders whole note on click of note link')
+  document.getElementsByTagName('a')[0].click();
+  assert.isTrue(document.getElementById('app').innerHTML, `<div>${noteText}</div>`)
+
+
 })();
