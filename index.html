@@ -1,6 +1,26 @@
-<div id="app">hello</div>
-<script src="./model/note-list-model.js"></script>
-<script src="./model/note-model.js"></script>
-<script src="./view/note-list-view.js"></script>
-<script src="view/single-note-view.js"></script>
-<script src="controller/note-controller.js"></script>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      #inputField, #submit {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="text" action="#note/new" method="post">
+      <h4>NEW NOTE:</h4>
+      <textarea form="text" name="content" action="index.html" method="post"></textarea>
+      <input id="submit" type="submit" name="Submit" value="submit">
+    </form>
+    <div id="app">hello</div>
+    <script src="./model/note-list-model.js"></script>
+    <script src="./model/note-model.js"></script>
+    <script src="./view/note-list-view.js"></script>
+    <script src="view/single-note-view.js"></script>
+    <script src="controller/note-controller.js"></script>
+
+  </body>
+</html>

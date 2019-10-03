@@ -16,14 +16,14 @@
 
   function clickTestDelayed() {
     it('renders whole note on click of note link')
-    controller.makeUrlShowNotePage();
+    // controller.makeUrlShowNotePage();
     document.getElementsByTagName('a')[0].click();
     function assertion() {assert.isTrue(document.getElementById('app').innerHTML, `<div>${noteText}</div>`)}
     // this ^ code runs before document.getElementById has finished so we have added a timeout to delay it
     setTimeout(assertion, 500)
 
   }
-  // this Timeout pauses the entire test above in order for the prior document.getElementById('app').innerHTML 
+  // this Timeout pauses the entire test above in order for the prior document.getElementById('app').innerHTML
   // to be the original link before our test code changes it to the single note view
   setTimeout(clickTestDelayed, 600)
 

@@ -22,9 +22,19 @@
     });
   };
 
+  NoteController.prototype.checkFormSubmit = function() {
+    document.getElementById('text').addEventListener('submit', function(event){
+      console.log(event.innerHTML)
+      event.preventDefault();
+    })
+  };
+
   exports.NoteController = NoteController;
 })(this);
 
 controller = new NoteController(new NoteList());
+// controller.addNote('note 1 longer than 20 characters')
+// controller.addNote('note 2 longer than 20 characters')
 controller.renderNotes();
 controller.makeUrlShowNotePage();
+controller.checkFormSubmit();
