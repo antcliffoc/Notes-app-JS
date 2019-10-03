@@ -24,8 +24,10 @@
 
   NoteController.prototype.checkFormSubmit = function() {
     document.getElementById('text').addEventListener('submit', function(event){
-      console.log(event.innerHTML)
       event.preventDefault();
+      var text = event.srcElement[0].value
+      controller.addNote(text)
+      controller.renderNotes();
     })
   };
 
