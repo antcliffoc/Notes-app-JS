@@ -33,10 +33,14 @@ Notes on functionality (once all user stories are implemented):
 
 **Access Page and show Notes**
 ```sequence {theme="hand"}
-user->browser: view the word hello
+user->browser: open app
 browser->localhost(server): url route ('./')
 localhost(server)->browser: index.html
-browser->user: rendered index.html
+browser->browser: rendered index.html
+user->browser: enters note
+browser->browser: renders note list
+user->browser: selects note
+browser->browser: renders single note
 ```
 
 ## Terminal instructions for downloading and running the app
